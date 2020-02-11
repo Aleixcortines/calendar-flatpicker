@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Example Flitpicker</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"/>
+    <script src="/flatpickr.min.js"></script>
+  </head>
+
+  <body>
+    <h1>Calendar Options</h1>
+
+    <h3>Basic calendar</h3>
+
+    <input  id="calendar-basic" />
+
+    <script>
+      flatpickr("#calendar-basic", {});
+    </script>
+
+    <h3>Basic calendar with date range</h3>
+
+    <input id="calendar-range" />
+
+    <script>
+      flatpickr("#calendar-range", {
+        mode: "range",
+      });
+    </script>
+
+    <h3>Basic calendar combined range dates</h3>
+
+    <label>From</label>
+    <input type="date" id="date_from" />
+    <label>To</label>
+    <input type="date" id="date_to" />
+
+    <script>
+     
+        flatpickr("#date_from", {
+          plugins: [new rangePlugin({ input: "#date_to" })]
+        });
+
+    </script>
+  </body>
+</html>
